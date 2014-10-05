@@ -237,4 +237,15 @@ class Ruleset {
 		return $val == $validator->get($target_field);
 	}
 	
+	
+        /**
+         * Allow add custom rule with lambda functions
+         * @param string $val
+         * @param function $fun
+         * @return mixed
+         */
+        protected function rule_custom($val, $fun) {
+            return $fun($val);
+        }
+	
 }
